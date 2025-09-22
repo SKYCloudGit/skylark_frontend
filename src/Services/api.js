@@ -1,13 +1,12 @@
 // src/api/api.js
-export const BASE_URL = "http://14.195.14.194:8081";
+export const BASE_URL = 'https://14.195.14.194:8081';
 
-const getToken = () => localStorage.getItem("authToken");
-
+const getToken = () => localStorage.getItem('authToken');
 
 const fetchWithAuth = async (url, onError) => {
   const token = getToken();
   if (!token) {
-    if (onError) onError("Authentication token not found.");
+    if (onError) onError('Authentication token not found.');
     return null;
   }
 
@@ -22,7 +21,7 @@ const fetchWithAuth = async (url, onError) => {
 
     return await response.json();
   } catch (error) {
-    if (onError) onError(error.message || "Unknown error");
+    if (onError) onError(error.message || 'Unknown error');
     return null;
   }
 };
