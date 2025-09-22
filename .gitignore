@@ -4,6 +4,9 @@ node_modules/
 # Build output
 build/
 
+# preetier
+.preetierrc
+
 # Local environment variables
 .env
 .env.local
