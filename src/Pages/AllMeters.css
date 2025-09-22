@@ -1,0 +1,42 @@
+/* .table thead {
+    background-color: #7C3AED;
+  }
+  
+  .table th {
+    color: white !important;
+  }
+  
+  .table-hover tbody tr:hover {
+    background-color: #f9e6f0;
+  }
+  
+  .spinner-border.text-primary {
+    color: #7C3AED !important;
+  }
+  
+
+  .table-responsive {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  @media (max-width: 768px) {
+    .table th,
+    .table td {
+      font-size: 14px;
+      white-space: nowrap;
+    }
+  
+    .table {
+      min-width: 600px;
+    }
+  }
+  
+  .table-row-hover:hover {
+    background-color: #f9e6f0 !important;
+  }
+  
+  .text-break {
+    word-break: break-word;
+  }
+   */

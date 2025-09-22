@@ -1,0 +1,75 @@
+/* /* select:focus,
+input:focus {
+  border-color: #7C3AED !important;
+  box-shadow: 0 0 0 0.2rem rgba(123, 35, 91, 0.25);
+} */
+
+.btn:hover {
+  opacity: 0.9;
+}
+
+.table thead {
+  background-color: #7C3AED;
+  color: white;
+}
+/* Input and select focus styles 
+.form-control:focus,
+.form-select:focus {
+  border-color: #7C3AED !important;
+  box-shadow: 0 0 0 0.2rem rgba(123, 35, 91, 0.25);
+}
+
+/* Primary button style 
+.btn-submit {
+  background-color: #7C3AED;
+  color: white;
+  transition: all 0.3s ease;
+}
+
+.btn-submit:hover {
+  opacity: 0.9;
+}
+
+/* Table header custom color 
+.custom-table thead {
+  background-color: #7C3AED;
+  color: white;
+}
+
+.table-bordered th,
+.table-bordered td {
+  border: 1px solid #7C3AED !important;
+}
+
+/* Add spacing for form blocks 
+.form-group {
+  margin-bottom: 1rem;
+}
+
+/* Keep labels and inputs nicely aligned 
+form .form-label {
+  font-weight: 500;
+  color: #333;
+}
+.form-label-tight {
+  margin-bottom: 0.125rem; /* 2px 
+  font-weight: 500; /* optional 
+}
+.input-tight {
+  margin-top: -0.125rem; /* 2px 
+}
+
+
+
+
+.form-select,
+.form-control {
+  border: 2px solid #7C3AED !important;
+  border-radius: 0.5rem;
+}
+
+.form-select:focus,
+.form-control:focus {
+  border-color: #7C3AED !important;
+  box-shadow: 0 0 0 0.2rem rgba(123, 35, 91, 0.25);
+} */

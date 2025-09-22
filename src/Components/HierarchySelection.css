@@ -1,0 +1,21 @@
+.meter-dropdown {
+    width: 230px;
+  }
+  
+  
+  .meter-dropdown:focus {
+    outline: none;
+    border-color: #7C3AED;
+    box-shadow: 0 0 0 0.2rem rgba(123, 35, 91, 0.25);
+  }
+  
+  .form-label {
+    color: #7C3AED;
+  }
+
+  .meter-dropdown.form-select-sm {
+    font-size: 0.8rem;
+    padding: 0.2rem 0.5rem;
+  }
+  
+  
