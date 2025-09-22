@@ -23,7 +23,7 @@ export const ChangeRoleDialog = ({ show, onClose, userId, fetchUsers, onSuccess 
 
       try {
         setLoading(true);
-        const response = await fetch(`${BASE_URL}/auth/user/id=${userId}`, {
+        const response = await fetch(`/auth/user/id=${userId}`, {
           headers: { Authorization: `Bearer ${token}` },
         });
 
@@ -50,7 +50,7 @@ export const ChangeRoleDialog = ({ show, onClose, userId, fetchUsers, onSuccess 
 
     try {
       setSaving(true);
-      const response = await fetch(`${BASE_URL}/auth/user/modify/${user.id}`, {
+      const response = await fetch(`/auth/user/modify/${user.id}`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

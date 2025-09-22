@@ -13,13 +13,13 @@ export const PermissionProvider = ({ children }) => {
     if (!token) return;
 
     try {
-      const userRes = await fetch(`${BASE_URL}/auth/me`, {
+      const userRes = await fetch(`/auth/me`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       const userData = await userRes.json();
       const userId = userData.id;
 
-      const moduleRes = await fetch(`${BASE_URL}/data/moduleAccessRight/userId=${userId}`, {
+      const moduleRes = await fetch(`/data/moduleAccessRight/userId=${userId}`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       const data = await moduleRes.json();

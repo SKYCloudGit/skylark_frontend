@@ -77,7 +77,7 @@ const DataTable = ({ tableData, hierarchy, titles, refreshTableData }) => {
     }
 
     try {
-      const response = await fetch(`${BASE_URL}/hierarchy/titles/all`, {
+      const response = await fetch(`/hierarchy/titles/all`, {
         headers: {
           'Content-Type': 'application/json',
           Authorization: `Bearer ${token}`,
@@ -224,7 +224,7 @@ const DataTable = ({ tableData, hierarchy, titles, refreshTableData }) => {
     };
 
     try {
-      const response = await fetch(`${BASE_URL}/hierarchy/data/modify/${editingId}`, {
+      const response = await fetch(`/hierarchy/data/modify/${editingId}`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

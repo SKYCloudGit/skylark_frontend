@@ -67,7 +67,7 @@ const UserManagementPage = () => {
 
     try {
       setLoading(true);
-      const response = await fetch(`${BASE_URL}/auth/user/getAll`, {
+      const response = await fetch(`/auth/user/getAll`, {
         method: 'GET',
         headers: { Authorization: `Bearer ${token}` },
       });
@@ -162,7 +162,7 @@ const UserManagementPage = () => {
     };
 
     try {
-      await axios.post(`${BASE_URL}/auth/user`, payload, {
+      await axios.post(`/auth/user`, payload, {
         headers: { Authorization: `Bearer ${token}`, 'Content-Type': 'application/json' },
       });
 
@@ -191,7 +191,7 @@ const UserManagementPage = () => {
     if (!token) return;
 
     try {
-      const res = await fetch(`${BASE_URL}/auth/user/toggleStatus/id=${userId}`, {
+      const res = await fetch(`/auth/user/toggleStatus/id=${userId}`, {
         method: 'GET',
         headers: { Authorization: `Bearer ${token}` },
       });
@@ -210,7 +210,7 @@ const UserManagementPage = () => {
     if (!token) return;
 
     try {
-      const response = await fetch(`${BASE_URL}/auth/user/hierarchy/add`, {
+      const response = await fetch(`/auth/user/hierarchy/add`, {
         method: 'POST',
         headers: {
           Authorization: `Bearer ${token}`,
@@ -247,7 +247,7 @@ const UserManagementPage = () => {
     }
 
     try {
-      const response = await fetch(`${BASE_URL}/auth/user/${userToDelete.keycloakId}`, {
+      const response = await fetch(`/auth/user/${userToDelete.keycloakId}`, {
         method: 'DELETE',
         headers: { Authorization: `Bearer ${token}` },
       });

@@ -60,7 +60,7 @@ const DataHierarchy = () => {
       if (!token) return;
 
       try {
-        const response = await fetch(`${BASE_URL}/hierarchy/titles/all`, {
+        const response = await fetch(`/hierarchy/titles/all`, {
           headers: { Authorization: `Bearer ${token}` },
         });
         const data = await response.json();
@@ -80,7 +80,7 @@ const DataHierarchy = () => {
     const token = getAuthToken();
     if (!token) return [];
 
-    const url = `${BASE_URL}/hierarchy/data/titleId=${hierarchyTitleId}${
+    const url = `/hierarchy/data/titleId=${hierarchyTitleId}${
       parentId ? `/parentId=${parentId}` : ''
     }`;
 
@@ -177,7 +177,7 @@ const DataHierarchy = () => {
     };
 
     try {
-      const response = await fetch(`${BASE_URL}/hierarchy/data`, {
+      const response = await fetch(`/hierarchy/data`, {
         method: 'POST',
         headers: {
           Authorization: `Bearer ${token}`,
@@ -206,7 +206,7 @@ const DataHierarchy = () => {
     if (!token) return;
 
     try {
-      const response = await fetch(`${BASE_URL}/hierarchy/data/all`, {
+      const response = await fetch(`/hierarchy/data/all`, {
         headers: { Authorization: `Bearer ${token}` },
       });
 

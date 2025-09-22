@@ -48,7 +48,7 @@ const AllMeters = () => {
       if (!token) return;
 
       try {
-        const response = await fetch(`${BASE_URL}/data/meter/getAll`, {
+        const response = await fetch(`/data/meter/getAll`, {
           headers: { Authorization: `Bearer ${token}` },
         });
         if (!response.ok) throw new Error('Failed to fetch meters');
@@ -104,7 +104,7 @@ const AllMeters = () => {
     if (!token) return;
 
     try {
-      const response = await fetch(`${BASE_URL}/data/meter/add`, {
+      const response = await fetch(`/data/meter/add`, {
         method: 'POST',
         headers: {
           Authorization: `Bearer ${token}`,

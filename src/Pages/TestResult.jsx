@@ -48,7 +48,7 @@ const TestResult = () => {
       const token = localStorage.getItem('authToken');
       if (!token) throw new Error('User not authenticated');
 
-      const response = await axios.get(`${BASE_URL}/device/manufacturing/getAll`, {
+      const response = await axios.get(`/device/manufacturing/getAll`, {
         headers: { Authorization: `Bearer ${token}` },
       });
 

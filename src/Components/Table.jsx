@@ -3,7 +3,7 @@ import axios from 'axios';
 import { BASE_URL } from '../Services/api';
 
 const Table = () => {
-  const url = `${BASE_URL}/hierarchy/titles/all`;
+  const url = `/hierarchy/titles/all`;
 
   const [data, setData] = useState([]);
 

@@ -28,7 +28,7 @@ const Forecasting = ({ meterSrNo }) => {
       const token = localStorage.getItem('authToken');
       if (!token) throw new Error('Auth token missing. Please login.');
 
-      const url = `${BASE_URL}/data/meter/utilisation/meterSrNo=${meterSrNo}/startDate=${startDate}/endDate=${endDate}`;
+      const url = `/data/meter/utilisation/meterSrNo=${meterSrNo}/startDate=${startDate}/endDate=${endDate}`;
       const res = await fetch(url, { headers: { Authorization: `Bearer ${token}` } });
 
       if (!res.ok) {

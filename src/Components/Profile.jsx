@@ -38,7 +38,7 @@ const Profile = () => {
 
   // Fetch user profile
   const fetchUserProfile = () => {
-    fetch(`${BASE_URL}/auth/me`, {
+    fetch(`/auth/me`, {
       headers: { Authorization: `Bearer ${token}` },
     })
       .then((res) => {
@@ -106,7 +106,7 @@ const Profile = () => {
     e.preventDefault();
     if (!userData?.id) return;
 
-    fetch(`${BASE_URL}/auth/user/modify/${userData.id}`, {
+    fetch(`/auth/user/modify/${userData.id}`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -143,7 +143,7 @@ const Profile = () => {
 
     try {
       await axios.post(
-        `${BASE_URL}/auth/resetPassword`,
+        `/auth/resetPassword`,
         {
           userId: userData.id,
           newPassword: form.newPassword,

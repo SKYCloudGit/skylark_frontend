@@ -87,15 +87,12 @@ const MeterDetails = () => {
     const formattedDate = selectedDate.toISOString().split('T')[0];
 
     try {
-      const response = await fetch(
-        `${BASE_URL}/data/get/meterSrNo=${meterId}/date=${formattedDate}`,
-        {
-          headers: {
-            'Content-Type': 'application/json',
-            Authorization: `Bearer ${token}`,
-          },
-        }
-      );
+      const response = await fetch(`/data/get/meterSrNo=${meterId}/date=${formattedDate}`, {
+        headers: {
+          'Content-Type': 'application/json',
+          Authorization: `Bearer ${token}`,
+        },
+      });
 
       console.log('API Response:', response);
 
@@ -151,7 +148,7 @@ const MeterDetails = () => {
     if (!token) return;
 
     try {
-      const response = await fetch(`${BASE_URL}/data/getAll/meterSrNo=${meterId}`, {
+      const response = await fetch(`/data/getAll/meterSrNo=${meterId}`, {
         headers: {
           'Content-Type': 'application/json',
           Authorization: `Bearer ${token}`,
@@ -254,7 +251,7 @@ const MeterDetails = () => {
     if (!token) return;
 
     try {
-      const response = await fetch(`${BASE_URL}/hierarchy/data/dataId=${consumerId}`, {
+      const response = await fetch(`/hierarchy/data/dataId=${consumerId}`, {
         headers: {
           'Content-Type': 'application/json',
           Authorization: `Bearer ${token}`,
@@ -302,7 +299,7 @@ const MeterDetails = () => {
     }
 
     try {
-      const response = await fetch(`${BASE_URL}/data/getAll/meterSrNo=${meterId}`, {
+      const response = await fetch(`/data/getAll/meterSrNo=${meterId}`, {
         headers: {
           Authorization: `Bearer ${token}`, // Include token if required
           'Content-Type': 'application/json',

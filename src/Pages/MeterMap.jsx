@@ -55,7 +55,7 @@ const MeterMap = () => {
       if (!token) return;
 
       try {
-        const response = await fetch(`${BASE_URL}/hierarchy/titles/all`, {
+        const response = await fetch(`/hierarchy/titles/all`, {
           headers: { Authorization: `Bearer ${token}` },
         });
         let data = await response.json();
@@ -79,9 +79,7 @@ const MeterMap = () => {
 
     try {
       const response = await fetch(
-        `${BASE_URL}/hierarchy/data/titleId=${hierarchyTitleId}${
-          parentId ? `/parentId=${parentId}` : ''
-        }`,
+        `/hierarchy/data/titleId=${hierarchyTitleId}${parentId ? `/parentId=${parentId}` : ''}`,
         {
           headers: { Authorization: `Bearer ${token}` },
         }
@@ -170,7 +168,7 @@ const MeterMap = () => {
       if (!token) return;
 
       try {
-        const response = await fetch(`${BASE_URL}/data/address/consumerId=${formData.consumerId}`, {
+        const response = await fetch(`/data/address/consumerId=${formData.consumerId}`, {
           headers: { Authorization: `Bearer ${token}` },
         });
 
@@ -193,7 +191,7 @@ const MeterMap = () => {
       if (!token) return;
 
       try {
-        const response = await fetch(`${BASE_URL}/data/meter/unMappedMeters`, {
+        const response = await fetch(`/data/meter/unMappedMeters`, {
           headers: { Authorization: `Bearer ${token}` },
         });
 
@@ -248,7 +246,7 @@ const MeterMap = () => {
     };
 
     try {
-      const response = await fetch(`${BASE_URL}/data/meter/consumer/mapping`, {
+      const response = await fetch(`/data/meter/consumer/mapping`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

@@ -37,7 +37,7 @@ const Signup = () => {
     setError('');
 
     try {
-      const response = await axios.post(`${BASE_URL}/auth/user`, formData);
+      const response = await axios.post(`/auth/user`, formData);
       if (response.status === 200 || response.status === 201) {
         alert('Signup successful ✅');
         navigate('/login');
