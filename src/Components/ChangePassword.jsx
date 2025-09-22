@@ -19,7 +19,7 @@ const ChangePassword = ({ show, onClose }) => {
     const token = getAuthToken();
     if (!token) return;
 
-    fetch(`/auth/me`, {
+    fetch(`/api/auth/me`, {
       headers: { Authorization: `Bearer ${token}` },
     })
       .then((res) => {
@@ -52,7 +52,7 @@ const ChangePassword = ({ show, onClose }) => {
 
     try {
       await axios.post(
-        `/auth/resetPassword`,
+        `/api/auth/resetPassword`,
         {
           userId: userId,
           newPassword: form.newPassword,

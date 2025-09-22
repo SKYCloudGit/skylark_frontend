@@ -77,7 +77,7 @@ const DataTable = ({ tableData, hierarchy, titles, refreshTableData }) => {
     }
 
     try {
-      const response = await fetch(`/hierarchy/titles/all`, {
+      const response = await fetch(`/api/hierarchy/titles/all`, {
         headers: {
           'Content-Type': 'application/json',
           Authorization: `Bearer ${token}`,
@@ -188,7 +188,7 @@ const DataTable = ({ tableData, hierarchy, titles, refreshTableData }) => {
     if (!token || !selectedTitle) return;
 
     try {
-      const response = await fetch(`/hierarchy/data/${selectedTitle.id}`, {
+      const response = await fetch(`/api/hierarchy/data/${selectedTitle.id}`, {
         method: 'DELETE',
         headers: {
           Authorization: `Bearer ${token}`,
@@ -224,7 +224,7 @@ const DataTable = ({ tableData, hierarchy, titles, refreshTableData }) => {
     };
 
     try {
-      const response = await fetch(`/hierarchy/data/modify/${editingId}`, {
+      const response = await fetch(`/api/hierarchy/data/modify/${editingId}`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
