@@ -17,7 +17,6 @@ import MeterDetails from './Pages/MeterDetails';
 import MappedMeter from './Pages/MappedMeters';
 import SessionTimeout from './Components/SessionTimeOut';
 import TestResult from './Pages/TestResult';
-import CustomerDashboard from './Pages/CustomerDashboard';
 import './ChartConfig';
 import BcsData from './Pages/BcsData';
 import Profile from './Components/Profile';
@@ -184,16 +183,6 @@ const App = () => {
               }
             />
 
-            <Route
-              path="/configure/customerdashboard"
-              element={
-                <ProtectedRoute>
-                  <ProtectedLayout>
-                    <CustomerDashboard />
-                  </ProtectedLayout>
-                </ProtectedRoute>
-              }
-            />
             <Route
               path="/bcstool/bcsdata"
               element={
