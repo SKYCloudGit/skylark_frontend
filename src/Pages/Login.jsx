@@ -36,7 +36,7 @@ const Login = () => {
     try {
       // Direct login, CAPTCHA removed
       const loginRes = await axios.post(
-        `/auth/login`,
+        `/api/auth/login`,
         {
           username: email,
           password: password,

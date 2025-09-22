@@ -1,5 +1,5 @@
 // src/api/api.js
-export const BASE_URL = 'http://14.195.14.194:8081';
+export const BASE_URL = 'https://14.195.14.194:8081';
 
 const getToken = () => localStorage.getItem('authToken');
 
@@ -27,15 +27,16 @@ const fetchWithAuth = async (url, onError) => {
 };
 
 export const fetchTotalDevices = async (onError) =>
-  fetchWithAuth(`/data/dashboard/presentDay/status`, onError);
+  fetchWithAuth(`/api/data/dashboard/presentDay/status`, onError);
 
 export const fetchWeeklyStatus = async (onError) =>
-  fetchWithAuth(`/data/dashboard/week/status`, onError);
+  fetchWithAuth(`/api/data/dashboard/week/status`, onError);
 
 export const getDeviceDetails = (meterId, onError) =>
-  fetchWithAuth(`/api/device/${meterId}`, onError);
+  fetchWithAuth(`/api/api/device/${meterId}`, onError);
 
 export const getConsumerDetails = (consumerId, onError) =>
-  fetchWithAuth(`/api/consumer/${consumerId}`, onError);
+  fetchWithAuth(`/api/api/consumer/${consumerId}`, onError);
 
-export const getReadings = (meterId, onError) => fetchWithAuth(`/api/readings/${meterId}`, onError);
+export const getReadings = (meterId, onError) =>
+  fetchWithAuth(`/api/api/readings/${meterId}`, onError);

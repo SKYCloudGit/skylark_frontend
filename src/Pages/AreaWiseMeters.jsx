@@ -48,13 +48,13 @@ const AreaWiseMeters = () => {
       if (!token) return;
 
       try {
-        const userRes = await fetch(`/auth/me`, {
+        const userRes = await fetch(`/api/auth/me`, {
           headers: { Authorization: `Bearer ${token}` },
         });
         const userData = await userRes.json();
         const userId = userData?.userHierarchy[0]?.hierarchyDataId;
 
-        const response = await fetch(`/data/meter/list/hierarchyDataId=${userId}`, {
+        const response = await fetch(`/api/data/meter/list/hierarchyDataId=${userId}`, {
           headers: { Authorization: `Bearer ${token}` },
         });
         if (!response.ok) throw new Error('Failed to fetch meters');
@@ -110,7 +110,7 @@ const AreaWiseMeters = () => {
     if (!token) return;
 
     try {
-      const response = await fetch(`/data/meter/add`, {
+      const response = await fetch(`/api/data/meter/add`, {
         method: 'POST',
         headers: {
           Authorization: `Bearer ${token}`,

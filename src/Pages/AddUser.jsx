@@ -77,7 +77,7 @@ const AddUser = () => {
     };
 
     try {
-      const response = await axios.post(`/auth/user`, payload, {
+      const response = await axios.post(`/api/auth/user`, payload, {
         headers: {
           Authorization: `Bearer ${token}`,
           'Content-Type': 'application/json',

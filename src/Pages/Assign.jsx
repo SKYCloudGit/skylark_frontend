@@ -51,10 +51,10 @@ const Assign = () => {
       setLoading(true);
       try {
         const [allResp, assignedResp] = await Promise.all([
-          fetch(`/data/module/getAll`, {
+          fetch(`/api/data/module/getAll`, {
             headers: { Authorization: `Bearer ${token}` },
           }),
-          fetch(`/data/moduleAccessRight/userId=${userId}`, {
+          fetch(`/api/data/moduleAccessRight/userId=${userId}`, {
             headers: { Authorization: `Bearer ${token}` },
           }),
         ]);
@@ -81,7 +81,7 @@ const Assign = () => {
   // Refresh assigned modules from server
   const refreshAssigned = async () => {
     try {
-      const resp = await fetch(`/data/moduleAccessRight/userId=${userId}`, {
+      const resp = await fetch(`/api/data/moduleAccessRight/userId=${userId}`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       if (!resp.ok) throw new Error('Refresh failed');
@@ -125,7 +125,7 @@ const Assign = () => {
   const handleConfirmAssign = async () => {
     if (!selectedModule) return;
     try {
-      const resp = await fetch(`/data/moduleAccessRight/add`, {
+      const resp = await fetch(`/api/data/moduleAccessRight/add`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${token}` },
         body: JSON.stringify({ userId, moduleId: selectedModule.id, ...permissions }),
@@ -151,7 +151,7 @@ const Assign = () => {
 
   const confirmDelete = async () => {
     try {
-      const resp = await fetch(`/data/moduleAccessRight/remove`, {
+      const resp = await fetch(`/api/data/moduleAccessRight/remove`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${token}` },
         body: JSON.stringify({ accessRightId: selectedAccessRightId }),
@@ -170,7 +170,7 @@ const Assign = () => {
 
   const togglePermission = async (accessRightId, field, current) => {
     try {
-      await fetch(`/data/moduleAccessRight/update`, {
+      await fetch(`/api/data/moduleAccessRight/update`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${token}` },
         body: JSON.stringify({ accessRightId, [field]: !current }),

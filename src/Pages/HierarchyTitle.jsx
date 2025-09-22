@@ -59,7 +59,7 @@ const HierarchyTitle = () => {
     if (!token) return;
 
     try {
-      const response = await fetch(`/hierarchy/titles/all`, {
+      const response = await fetch(`/api/hierarchy/titles/all`, {
         headers: {
           'Content-Type': 'application/json',
           Authorization: `Bearer ${token}`,
@@ -100,7 +100,7 @@ const HierarchyTitle = () => {
     if (!token) return;
 
     try {
-      const res = await fetch(`/hierarchy/titles`, {
+      const res = await fetch(`/api/hierarchy/titles`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -133,7 +133,7 @@ const HierarchyTitle = () => {
     if (!token || !editingId) return;
 
     try {
-      const res = await fetch(`/hierarchy/titles/modify/${editingId}`, {
+      const res = await fetch(`/api/hierarchy/titles/modify/${editingId}`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -185,7 +185,7 @@ const HierarchyTitle = () => {
     if (!token || !selectedTitle) return;
 
     try {
-      const res = await fetch(`/hierarchy/titles/${selectedTitle.id}`, {
+      const res = await fetch(`/api/hierarchy/titles/${selectedTitle.id}`, {
         method: 'DELETE',
         headers: {
           Authorization: `Bearer ${token}`,

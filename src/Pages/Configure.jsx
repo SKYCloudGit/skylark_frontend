@@ -43,7 +43,7 @@ const Configure = () => {
       const token = getAuthToken();
       if (!token) throw new Error('No auth token found');
 
-      const userRes = await fetch(`/auth/me`, {
+      const userRes = await fetch(`/api/auth/me`, {
         headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${token}` },
       });
       if (!userRes.ok) throw new Error('Failed to fetch user info');
@@ -52,7 +52,7 @@ const Configure = () => {
       const hierarchyDataId = userData?.userHierarchy[0]?.hierarchyDataId;
       if (!hierarchyDataId) throw new Error('Hierarchy DataId not found');
 
-      const res = await axios.get(`/data/meter/list/hierarchyDataId=${hierarchyDataId}`, {
+      const res = await axios.get(`/api/data/meter/list/hierarchyDataId=${hierarchyDataId}`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       if (res.data && Array.isArray(res.data)) {
@@ -208,7 +208,7 @@ const Configure = () => {
       console.log('Sending:', { topic, finalPayload, qos, retainRequired });
 
       await axios.get(
-        `/c2dmessages/publish?topic=${encodeURIComponent(topic)}&payload=${encodeURIComponent(
+        `/api/c2dmessages/publish?topic=${encodeURIComponent(topic)}&payload=${encodeURIComponent(
           finalPayload
         )}&qos=${qos}&retainRequired=${retainRequired}`,
         { headers: { Authorization: `Bearer ${token}` } }

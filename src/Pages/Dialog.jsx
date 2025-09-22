@@ -100,7 +100,7 @@ export const EditUserDialog = ({
 
       try {
         setLoading(true);
-        const response = await fetch(`/auth/user/id=${userId}`, {
+        const response = await fetch(`/api/auth/user/id=${userId}`, {
           headers: { Authorization: `Bearer ${token}` },
         });
         if (!response.ok) throw new Error('Failed to fetch user details');
@@ -122,7 +122,7 @@ export const EditUserDialog = ({
 
     try {
       setSaving(true);
-      const response = await fetch(`/auth/user/modify/${selectedUser.id}`, {
+      const response = await fetch(`/api/auth/user/modify/${selectedUser.id}`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

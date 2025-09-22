@@ -47,7 +47,7 @@ const BcsData = () => {
     const token = getAuthToken();
     if (!token) return;
     try {
-      const response = await fetch(`/device/manufacturing/getAll`, {
+      const response = await fetch(`/api/device/manufacturing/getAll`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       if (!response.ok) throw new Error('Failed to fetch meters');
@@ -76,7 +76,7 @@ const BcsData = () => {
     if (!token) return;
 
     try {
-      const res = await fetch(`/device/manufacturing/add`, {
+      const res = await fetch(`/api/device/manufacturing/add`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

@@ -30,7 +30,7 @@ export const DeleteUserDialog = ({
       if (!token) return;
       try {
         setLoading(true);
-        const response = await fetch(`/auth/user/id=${userId}`, {
+        const response = await fetch(`/api/auth/user/id=${userId}`, {
           headers: { Authorization: `Bearer ${token}` },
         });
         if (!response.ok) throw new Error('Failed to fetch user details');
@@ -54,7 +54,7 @@ export const DeleteUserDialog = ({
     if (!token) return;
     try {
       setDeleting(true);
-      const response = await fetch(`/auth/user/${user.keycloakId}`, {
+      const response = await fetch(`/api/auth/user/${user.keycloakId}`, {
         method: 'DELETE',
         headers: {
           Authorization: `Bearer ${token}`,

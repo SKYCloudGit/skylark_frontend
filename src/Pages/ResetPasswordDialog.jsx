@@ -30,7 +30,7 @@ export const ResetPasswordDialog = ({
       if (!token) return;
       try {
         setLoading(true);
-        const response = await fetch(`/auth/user/id=${userId}`, {
+        const response = await fetch(`/api/auth/user/id=${userId}`, {
           headers: { Authorization: `Bearer ${token}` },
         });
         if (!response.ok) throw new Error('Failed to fetch user details');
@@ -60,7 +60,7 @@ export const ResetPasswordDialog = ({
 
     try {
       setSaving(true);
-      const response = await fetch(`/auth/resetPassword`, {
+      const response = await fetch(`/api/auth/resetPassword`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
