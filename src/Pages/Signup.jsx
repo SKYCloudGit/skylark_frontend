@@ -1,8 +1,7 @@
-import React, { useState, useEffect } from 'react';
-import { Eye, EyeOff, Activity, TrendingUp, Zap, Wifi } from 'lucide-react';
+import React, { useState } from 'react';
+import { TrendingUp, Zap, Wifi, Droplets, Mail, Lock, User, Phone } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import { BASE_URL } from '../Services/api';
-import { Droplets, Mail, Lock, User, Phone } from 'lucide-react';
 import axios from 'axios';
 import './Signup.css';
 
@@ -25,9 +24,16 @@ const Signup = () => {
   const [isOnline, setIsOnline] = useState(true);
 
   const handleChange = (e) => {
+    const { name, value } = e.target;
+
+    // ✅ Allow only digits in phone number
+    if (name === 'phoneNumber') {
+      if (!/^\d*$/.test(value)) return;
+    }
+
     setFormData((prev) => ({
       ...prev,
-      [e.target.name]: e.target.value,
+      [name]: value,
     }));
   };
 
@@ -36,11 +42,35 @@ const Signup = () => {
     setLoading(true);
     setError('');
 
+    // ✅ Phone number validation (10 digits)
+    if (!/^\d{10}$/.test(formData.phoneNumber)) {
+      setError('❌ Phone number must be exactly 10 digits.');
+      setLoading(false);
+      return;
+    }
+
+    // ✅ Password strength validation
+    const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+    if (!passwordRegex.test(formData.password)) {
+      setError(
+        '❌ Password must be at least 8 characters, include uppercase, lowercase, number, and special character.'
+      );
+      setLoading(false);
+      return;
+    }
+
+    // ✅ Confirm password validation
+    if (formData.password !== formData.cpassword) {
+      setError('❌ Passwords do not match.');
+      setLoading(false);
+      return;
+    }
+
     try {
-      const response = await axios.post(`/api/auth/user`, formData);
+      const response = await axios.post(`${BASE_URL}/auth/user`, formData);
       if (response.status === 200 || response.status === 201) {
         alert('Signup successful ✅');
-        navigate('/login');
+        navigate('/');
       } else {
         setError('❌ Signup failed.');
       }
@@ -51,8 +81,10 @@ const Signup = () => {
       setLoading(false);
     }
   };
+
   return (
     <div className="login-container">
+      {/* Left panel */}
       <div className="login-left-panel">
         <div className="login-brand">
           <div className="login-logo">
@@ -130,6 +162,7 @@ const Signup = () => {
         </div>
       </div>
 
+      {/* Right panel */}
       <div className="login-right-panel">
         <div className="login-form-container">
           <div className="login-header">
@@ -234,16 +267,17 @@ const Signup = () => {
                   />
                 </div>
               </div>
+
               <div className="form-group">
-                <label className="form-label"> Confirm Password</label>
+                <label className="form-label">Confirm Password</label>
                 <div className="input-wrapper">
                   <Lock className="input-icon" />
                   <input
                     type="password"
-                    name="password"
+                    name="cpassword"
                     value={formData.cpassword}
                     onChange={handleChange}
-                    placeholder="Enter password"
+                    placeholder="Confirm password"
                     className="form-input"
                     required
                   />
