@@ -208,7 +208,7 @@ const Login = () => {
             </div>
 
             {/* remember + forgot */}
-            <div className="form-options">
+            {/* <div className="form-options">
               <label className="checkbox-label">
                 <input
                   type="checkbox"
@@ -222,7 +222,7 @@ const Login = () => {
               <Link href="/" className="forgot-password">
                 Forgot password?
               </Link>
-            </div>
+            </div> */}
 
             {/* errors */}
             {error && <div className="error-message">{error}</div>}
