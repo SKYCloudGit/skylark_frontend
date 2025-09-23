@@ -199,17 +199,30 @@ const AllMeters = () => {
               >
                 <div className="modal-body p-3">
                   <div className="row">
+                    {/* Meter Serial No */}
                     <div className="col-md-6 mb-2">
-                      <label className="label-heading small">Meter serial No</label>
+                      <label className="label-heading small">Meter Serial No</label>
                       <input
                         type="text"
                         className="dropdowns input-tight"
                         style={{ marginTop: '0.02rem' }}
                         id="meterSrNo"
                         value={formData.meterSrNo}
-                        onChange={handleChange}
+                        maxLength={8} // only 8 digits
+                        inputMode="numeric" // mobile keyboards show number pad
+                        pattern="[0-9]{8}" // regex for exactly 8 digits
+                        onChange={(e) => {
+                          const value = e.target.value.replace(/\D/g, ''); // remove non-digits
+                          if (value.length <= 8) {
+                            handleChange({
+                              target: { id: 'meterSrNo', value },
+                            });
+                          }
+                        }}
                       />
                     </div>
+
+                    {/* Year Of Manufacture */}
                     <div className="col-md-6 mb-2">
                       <label className="label-heading small">Year Of Manufacture</label>
                       <input
@@ -218,19 +231,45 @@ const AllMeters = () => {
                         style={{ marginTop: '0.02rem' }}
                         id="yearOfManufacture"
                         value={formData.yearOfManufacture}
-                        onChange={handleChange}
+                        maxLength={4} // only 4 digits
+                        inputMode="numeric"
+                        pattern="[0-9]{4}" // regex for exactly 4 digits
+                        onChange={(e) => {
+                          const value = e.target.value.replace(/\D/g, ''); // remove non-digits
+                          if (value.length <= 4) {
+                            handleChange({
+                              target: { id: 'yearOfManufacture', value },
+                            });
+                          }
+                        }}
                       />
                     </div>
 
                     <div className="col-md-6 mb-2">
-                      <label className="label-heading small"> Initial Accumulated Flow (m³)</label>
+                      <label className="label-heading small">Initial Accumulated Flow (m³)</label>
                       <input
                         type="text"
                         className="dropdowns input-tight"
                         style={{ marginTop: '0.02rem' }}
                         id="initialAccumulatedFlow"
                         value={formData.initialAccumulatedFlow}
-                        onChange={handleChange}
+                        inputMode="decimal" // brings numeric keypad with decimal on mobile
+                        onChange={(e) => {
+                          let value = e.target.value;
+
+                          // Allow only digits and decimal
+                          value = value.replace(/[^0-9.]/g, '');
+
+                          // Prevent more than one decimal point
+                          const parts = value.split('.');
+                          if (parts.length > 2) {
+                            value = parts[0] + '.' + parts.slice(1).join('');
+                          }
+
+                          handleChange({
+                            target: { id: 'initialAccumulatedFlow', value },
+                          });
+                        }}
                       />
                     </div>
 

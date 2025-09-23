@@ -1,5 +1,5 @@
 // src/api/api.js
-export const BASE_URL = 'https://14.195.14.194:8081';
+export const BASE_URL = 'http://14.195.14.194:8081';
 
 const getToken = () => localStorage.getItem('authToken');
 
