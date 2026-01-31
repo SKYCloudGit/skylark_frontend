@@ -1,6 +1,5 @@
 import React, { createContext, useState, useEffect } from 'react';
 import { getAuthToken } from './Services/auth';
-import { BASE_URL } from './Services/api';
 
 export const PermissionContext = createContext(); // ✅ ONLY export this once
 

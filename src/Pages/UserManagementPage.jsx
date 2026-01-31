@@ -9,7 +9,6 @@ import CustomPagination from '../Components/CustomPagination';
 import ErrorModal from '../Components/ErrorModal';
 import SuccessModal from '../Components/SuccessModal'; // 👈 Add this
 import CustomDropdown from '../Components/CustomDropdown';
-import { BASE_URL } from '../Services/api';
 import { useModulePermissions } from '../hooks/useModulePermissions';
 import ActionDropdown from '../Components/ActionDropdown';
 import ConfirmModal from '../Components/ConfirmModal';
@@ -87,6 +86,7 @@ const UserManagementPage = () => {
 
   useEffect(() => {
     fetchUsers();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   useEffect(() => {
@@ -121,7 +121,7 @@ const UserManagementPage = () => {
   };
 
   const validatePassword = (password) => {
-    const regex = /^(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]).{6,}$/;
+    const regex = /^(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()_+\-=[\]{};':"\\|,.<>/?]).{6,}$/;
     return regex.test(password);
   };
 

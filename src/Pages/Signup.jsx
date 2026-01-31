@@ -21,7 +21,7 @@ const Signup = () => {
   const [error, setError] = useState('');
   const navigate = useNavigate();
   const [currentUsage, setCurrentUsage] = useState(1234.5);
-  const [isOnline, setIsOnline] = useState(true);
+  const [isOnline] = useState(true);
 
   const handleChange = (e) => {
     const { name, value } = e.target;

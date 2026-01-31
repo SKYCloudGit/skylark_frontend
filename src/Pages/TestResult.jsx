@@ -12,7 +12,6 @@ import {
 } from 'react-icons/fa';
 import { useParams } from 'react-router-dom';
 import GoBack from '../Components/GoBack';
-import { BASE_URL } from '../Services/api';
 
 // ✅ Status icon helper
 const getStatusIcon = (status) => {
@@ -69,7 +68,8 @@ const TestResult = () => {
 
   useEffect(() => {
     fetchDeviceResults();
-  }, [meterIdentifier, iotDeviceIdentifier]); // ✅ correct dependencies
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [meterIdentifier, iotDeviceIdentifier]);
 
   if (loading) return <div className="container mt-5">Loading...</div>;
   if (!deviceData) return <div className="container mt-5">No data found.</div>;

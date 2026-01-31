@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react';
-import { BASE_URL } from '../Services/api';
 
 export const useModulePermissions = () => {
   const [permissionsMap, setPermissionsMap] = useState({});

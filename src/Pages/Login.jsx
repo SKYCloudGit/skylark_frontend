@@ -12,7 +12,7 @@ const Login = () => {
   const [password, setPassword] = useState('');
   const [rememberMe, setRememberMe] = useState(false);
   const [currentUsage, setCurrentUsage] = useState(1234.5);
-  const [isOnline, setIsOnline] = useState(true);
+  const [isOnline] = useState(true);
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
 
@@ -22,7 +22,6 @@ const Login = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentUsage((prev) => prev + Math.random() * 0.5);
-      setIsOnline(Math.random() > 0.1);
     }, 5000);
     return () => clearInterval(interval);
   }, []);
