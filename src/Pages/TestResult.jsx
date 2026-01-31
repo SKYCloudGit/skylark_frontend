@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import axios from 'axios';
 import { Card, Badge } from 'react-bootstrap';
 import {
   FaCheckCircle,

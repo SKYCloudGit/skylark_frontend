@@ -151,15 +151,6 @@ const UserManagementPage = () => {
       return;
     }
 
-    const payload = {
-      userName: formData.userName,
-      firstName: formData.firstName,
-      secondName: formData.secondName,
-      emailAddress: formData.emailAddress,
-      phoneNumber: formData.phoneNumber,
-      password: formData.password,
-      userRole: formData.userRole,
-    };
 
     try {
       await axios.post(`/auth/signup`, formData, {

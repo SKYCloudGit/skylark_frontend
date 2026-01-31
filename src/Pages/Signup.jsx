@@ -19,7 +19,7 @@ const Signup = () => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
   const navigate = useNavigate();
-  const [currentUsage, setCurrentUsage] = useState(1234.5);
+  const [currentUsage] = useState(1234.5);
   const [isOnline] = useState(true);
 
   const handleChange = (e) => {

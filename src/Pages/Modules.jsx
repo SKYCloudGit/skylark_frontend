@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { ChevronDown, ChevronRight } from 'lucide-react';
 import CustomDropdown from '../Components/CustomDropdown';
 import SuccessModal from '../Components/SuccessModal';
@@ -39,7 +39,7 @@ const Modules = () => {
     return root;
   };
 
-  const fetchModules = async () => {
+  const fetchModules = useCallback(async () => {
     const token = getAuthToken();
     try {
       const res = await fetch(`/data/module/getAll`, {
@@ -59,11 +59,11 @@ const Modules = () => {
       setError(true);
       setErrorMessage('❌ Something went wrong while fetching modules');
     }
-  };
+  }, []);
 
   useEffect(() => {
     fetchModules();
-  }, []);
+  }, [fetchModules]);
 
   const toggleRow = (id) => {
     setExpandedRows((prev) => ({ ...prev, [id]: !prev[id] }));

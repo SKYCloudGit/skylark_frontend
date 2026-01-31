@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react';
-import { BASE_URL } from '../Services/api';
 import SuccessModal from '../Components/SuccessModal';
 import ErrorModal from '../Components/ErrorModal';
 
@@ -11,9 +10,6 @@ export const ResetPasswordDialog = ({
   fetchUsers,
   onSuccess,
 }) => {
-  const [loading, setLoading] = useState(false);
-  const [saving, setSaving] = useState(false);
-  const [toggling, setToggling] = useState(false);
   const [user, setUser] = useState({});
   const [newPassword, setNewPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
@@ -29,7 +25,6 @@ export const ResetPasswordDialog = ({
       const token = getAuthToken();
       if (!token) return;
       try {
-        setLoading(true);
         const response = await fetch(`/auth/user/id=${userId}`, {
           headers: { Authorization: `Bearer ${token}` },
         });
@@ -39,7 +34,7 @@ export const ResetPasswordDialog = ({
       } catch (error) {
         console.error('Error fetching user:', error);
       } finally {
-        setLoading(false);
+        // setLoading(false);
       }
     };
     fetchUserDetails();
@@ -59,7 +54,6 @@ export const ResetPasswordDialog = ({
     if (!token) return;
 
     try {
-      setSaving(true);
       const response = await fetch(`/auth/reset-password`, {
         method: 'POST',
         headers: {
@@ -84,7 +78,7 @@ export const ResetPasswordDialog = ({
       setError(true);
       setErrorMessage('Error updating role. Please try again.');
     } finally {
-      setSaving(false);
+      // setSaving(false);
     }
   };
 
