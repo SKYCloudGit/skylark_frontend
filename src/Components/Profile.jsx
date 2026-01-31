@@ -38,7 +38,7 @@ const Profile = () => {
 
   // Fetch user profile
   const fetchUserProfile = () => {
-    fetch(`/api/auth/me`, {
+    fetch(`/auth/me`, {
       headers: { Authorization: `Bearer ${token}` },
     })
       .then((res) => {
@@ -106,7 +106,7 @@ const Profile = () => {
     e.preventDefault();
     if (!userData?.id) return;
 
-    fetch(`/api/auth/user/modify/${userData.id}`, {
+    fetch(`/auth/user/modify/${userData.id}`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -143,7 +143,7 @@ const Profile = () => {
 
     try {
       await axios.post(
-        `/api/auth/resetPassword`,
+        `/auth/resetPassword`,
         {
           userId: userData.id,
           newPassword: form.newPassword,
@@ -170,7 +170,7 @@ const Profile = () => {
   const confirmDeleteAccount = () => {
     if (!userData?.id) return;
 
-    fetch(`/api/auth/user/${userData.id}`, {
+    fetch(`/auth/user/${userData.id}`, {
       method: 'DELETE',
       headers: { Authorization: `Bearer ${token}` },
     })

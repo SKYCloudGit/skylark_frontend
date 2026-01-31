@@ -1,5 +1,6 @@
 // src/api/api.js
-export const BASE_URL = 'http://20.197.44.133:8081';
+// Update this to match your actual backend URL
+export const BASE_URL = 'http://20.197.44.133:8081'; // Azure VM
 
 const getToken = () => localStorage.getItem('authToken');
 
@@ -27,16 +28,16 @@ const fetchWithAuth = async (url, onError) => {
 };
 
 export const fetchTotalDevices = async (onError) =>
-  fetchWithAuth(`/api/data/dashboard/presentDay/status`, onError);
+  fetchWithAuth(`/data/dashboard/presentDay/status`, onError);
 
 export const fetchWeeklyStatus = async (onError) =>
-  fetchWithAuth(`/api/data/dashboard/week/status`, onError);
+  fetchWithAuth(`/data/dashboard/week/status`, onError);
 
 export const getDeviceDetails = (meterId, onError) =>
-  fetchWithAuth(`/api/api/device/${meterId}`, onError);
+  fetchWithAuth(`/device/${meterId}`, onError);
 
 export const getConsumerDetails = (consumerId, onError) =>
-  fetchWithAuth(`/api/api/consumer/${consumerId}`, onError);
+  fetchWithAuth(`/consumer/${consumerId}`, onError);
 
 export const getReadings = (meterId, onError) =>
-  fetchWithAuth(`/api/api/readings/${meterId}`, onError);
+  fetchWithAuth(`/readings/${meterId}`, onError);

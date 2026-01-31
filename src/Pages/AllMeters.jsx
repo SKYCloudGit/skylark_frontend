@@ -7,7 +7,6 @@ import ErrorModal from '../Components/ErrorModal';
 import ConfirmModal from '../Components/ConfirmModal';
 import './AllMeters.css';
 import { useModulePermissions } from '../hooks/useModulePermissions';
-import { BASE_URL } from '../Services/api';
 
 const AllMeters = () => {
   const [meters, setMeters] = useState([]);
@@ -48,7 +47,7 @@ const AllMeters = () => {
       if (!token) return;
 
       try {
-        const response = await fetch(`/api/data/meter/getAll`, {
+        const response = await fetch(`/data/meter/getAll`, {
           headers: { Authorization: `Bearer ${token}` },
         });
         if (!response.ok) throw new Error('Failed to fetch meters');
@@ -63,6 +62,7 @@ const AllMeters = () => {
     };
 
     fetchMeters();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   useEffect(() => {
@@ -104,7 +104,7 @@ const AllMeters = () => {
     if (!token) return;
 
     try {
-      const response = await fetch(`/api/data/meter/add`, {
+      const response = await fetch(`/data/meter/add`, {
         method: 'POST',
         headers: {
           Authorization: `Bearer ${token}`,

@@ -28,7 +28,7 @@ const HierarchySelection = ({
       if (!token) return;
 
       try {
-        const response = await fetch(`/api/hierarchy/titles/all`, {
+        const response = await fetch(`/hierarchy/data/all`, {
           headers: { Authorization: `Bearer ${token}` },
         });
         const data = await response.json();

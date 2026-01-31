@@ -7,7 +7,6 @@ import ErrorModal from '../Components/ErrorModal';
 import ConfirmModal from '../Components/ConfirmModal';
 import './AllMeters.css';
 import { useModulePermissions } from '../hooks/useModulePermissions';
-import { BASE_URL } from '../Services/api';
 
 const AreaWiseMeters = () => {
   const [meters, setMeters] = useState([]);
@@ -48,13 +47,13 @@ const AreaWiseMeters = () => {
       if (!token) return;
 
       try {
-        const userRes = await fetch(`/api/auth/me`, {
+        const userRes = await fetch(`/auth/me`, {
           headers: { Authorization: `Bearer ${token}` },
         });
         const userData = await userRes.json();
         const userId = userData?.userHierarchy[0]?.hierarchyDataId;
 
-        const response = await fetch(`/api/data/meter/list/hierarchyDataId=${userId}`, {
+        const response = await fetch(`/data/meter/list/hierarchyDataId=${userId}`, {
           headers: { Authorization: `Bearer ${token}` },
         });
         if (!response.ok) throw new Error('Failed to fetch meters');
@@ -69,6 +68,7 @@ const AreaWiseMeters = () => {
     };
 
     fetchMeters();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   useEffect(() => {
@@ -110,7 +110,7 @@ const AreaWiseMeters = () => {
     if (!token) return;
 
     try {
-      const response = await fetch(`/api/data/meter/add`, {
+      const response = await fetch(`/data/meter/add`, {
         method: 'POST',
         headers: {
           Authorization: `Bearer ${token}`,

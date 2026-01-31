@@ -17,7 +17,7 @@ export const useModulePermissions = () => {
         if (!token) throw new Error('No auth token found');
 
         // 1️⃣ Get user info first
-        const userRes = await fetch(`/api/auth/me`, {
+        const userRes = await fetch(`/auth/me`, {
           headers: {
             'Content-Type': 'application/json',
             Authorization: `Bearer ${token}`,
@@ -31,7 +31,7 @@ export const useModulePermissions = () => {
         if (!userId) throw new Error('User ID not found in response');
 
         // 2️⃣ Now fetch module permissions
-        const permRes = await fetch(`/api/data/moduleAccessRight/userId=${userId}`, {
+        const permRes = await fetch(`/data/moduleAccessRight/userId=${userId}`, {
           headers: {
             'Content-Type': 'application/json',
             Authorization: `Bearer ${token}`,

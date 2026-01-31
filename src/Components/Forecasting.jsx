@@ -28,8 +28,9 @@ const Forecasting = ({ meterSrNo }) => {
       const token = localStorage.getItem('authToken');
       if (!token) throw new Error('Auth token missing. Please login.');
 
-      const url = `/api/data/meter/utilisation/meterSrNo=${meterSrNo}/startDate=${startDate}/endDate=${endDate}`;
-      const res = await fetch(url, { headers: { Authorization: `Bearer ${token}` } });
+      const res = await fetch(`/data/meter-data/forecast?meterSrNo=${meterSrNo}&startDate=${startDate}&endDate=${endDate}`, {
+        headers: { Authorization: `Bearer ${token}` },
+      });
 
       if (!res.ok) {
         if (res.status === 404) throw new Error('No utilisation available for this meter.');

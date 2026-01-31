@@ -47,12 +47,13 @@ const TestResult = () => {
       const token = localStorage.getItem('authToken');
       if (!token) throw new Error('User not authenticated');
 
-      const response = await axios.get(`/api/device/manufacturing/getAll`, {
+      const response = await fetch(`/device/test-result/all`, {
         headers: { Authorization: `Bearer ${token}` },
       });
+      const data = await response.json();
 
       // ✅ Find the specific device by Meter ID + IoT ID
-      const record = response.data.find(
+      const record = data.find(
         (d) =>
           String(d.meterIdentifier).toLowerCase() === String(meterIdentifier).toLowerCase() &&
           String(d.iotDeviceIdentifier).toLowerCase() === String(iotDeviceIdentifier).toLowerCase()

@@ -19,7 +19,7 @@ const ChangePassword = ({ show, onClose }) => {
     const token = getAuthToken();
     if (!token) return;
 
-    fetch(`/api/auth/me`, {
+    fetch(`/auth/me`, {
       headers: { Authorization: `Bearer ${token}` },
     })
       .then((res) => {
@@ -51,27 +51,26 @@ const ChangePassword = ({ show, onClose }) => {
     }
 
     try {
-      await axios.post(
-        `/api/auth/resetPassword`,
-        {
+      const response = await fetch(`/auth/change-password`, {
+        method: 'POST',
+        headers: {
+          Authorization: `Bearer ${token}`,
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
           userId: userId,
           newPassword: form.newPassword,
           confirmPassword: form.confirmPassword,
-        },
-        {
-          headers: {
-            Authorization: `Bearer ${token}`,
-            'Content-Type': 'application/json',
-          },
-        }
-      );
+        }),
+      });
+
+      if (!response.ok) throw new Error('Failed to change password');
 
       setSuccess(true);
       setForm({ newPassword: '', confirmPassword: '' });
     } catch (err) {
       console.error(err);
-      const msg = err.response?.data?.message || '❌ Failed to change password.';
-      setError({ show: true, message: msg });
+      setError({ show: true, message: '❌ Failed to change password.' });
     }
   };
 

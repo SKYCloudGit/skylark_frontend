@@ -42,7 +42,7 @@ const Modules = () => {
   const fetchModules = async () => {
     const token = getAuthToken();
     try {
-      const res = await fetch(`/api/data/module/getAll`, {
+      const res = await fetch(`/data/module/getAll`, {
         headers: { Authorization: `Bearer ${token}` },
       });
 
@@ -78,7 +78,7 @@ const Modules = () => {
 
     const token = getAuthToken();
     try {
-      const response = await fetch(`/api/data/module/add`, {
+      const response = await fetch(`/data/module/add`, {
         method: 'POST',
         headers: {
           Authorization: `Bearer ${token}`,

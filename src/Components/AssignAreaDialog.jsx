@@ -18,7 +18,7 @@ const AssignAreaDialog = ({ show, onClose, userId, onAssign }) => {
       if (!token) return;
 
       try {
-        const res = await fetch(`/api/hierarchy/titles/all`, {
+        const res = await fetch(`/hierarchy/titles/all`, {
           headers: { Authorization: `Bearer ${token}` },
         });
         const data = await res.json();
@@ -79,7 +79,7 @@ const AssignAreaDialog = ({ show, onClose, userId, onAssign }) => {
       if (!token) return;
 
       try {
-        const res = await fetch(`/api/hierarchy/data/titleId=${activeTitle}`, {
+        const res = await fetch(`/hierarchy/data/titleId=${activeTitle}`, {
           headers: { Authorization: `Bearer ${token}` },
         });
         const data = await res.json();

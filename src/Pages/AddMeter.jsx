@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import GoBack from '../Components/GoBack';
-import { BASE_URL } from '../Services/api';
 
 export default function Add() {
   const [error, setError] = useState(false);
@@ -33,7 +32,7 @@ export default function Add() {
     if (!token) return;
 
     try {
-      const response = await fetch(`/api/data/meter/add`, {
+      const response = await fetch(`/data/meter/add`, {
         method: 'POST',
         headers: {
           Authorization: `Bearer ${token}`,

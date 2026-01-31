@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import { BASE_URL } from '../Services/api';
 import './AddUser.css';
 import GoBack from '../Components/GoBack';
 
@@ -34,7 +33,7 @@ const AddUser = () => {
   };
 
   const validatePassword = (password) => {
-    const regex = /^(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]).{6,}$/;
+    const regex = /^(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()_+\-=[\]{};':"\\|,.<>/?]).{6,}$/;
     return regex.test(password);
   };
 
@@ -77,7 +76,7 @@ const AddUser = () => {
     };
 
     try {
-      const response = await axios.post(`/api/auth/user`, payload, {
+      const response = await axios.post(`/auth/user`, payload, {
         headers: {
           Authorization: `Bearer ${token}`,
           'Content-Type': 'application/json',

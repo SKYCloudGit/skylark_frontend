@@ -66,12 +66,12 @@ const UserManagementPage = () => {
 
     try {
       setLoading(true);
-      const response = await fetch(`/api/auth/user/getAll`, {
+      const response = await fetch(`/auth/user/all`, {
         method: 'GET',
         headers: { Authorization: `Bearer ${token}` },
       });
 
-      if (!response.ok) throw new Error(await response.text());
+      if (!response.ok) throw new Error('Failed to fetch users');
 
       const data = await response.json();
       setUsers(data);
@@ -162,7 +162,7 @@ const UserManagementPage = () => {
     };
 
     try {
-      await axios.post(`/api/auth/user`, payload, {
+      await axios.post(`/auth/user`, payload, {
         headers: { Authorization: `Bearer ${token}`, 'Content-Type': 'application/json' },
       });
 

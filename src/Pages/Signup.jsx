@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { TrendingUp, Zap, Wifi, Droplets, Mail, Lock, User, Phone } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
-import { BASE_URL } from '../Services/api';
 import axios from 'axios';
 import './Signup.css';
 
@@ -67,7 +66,7 @@ const Signup = () => {
     }
 
     try {
-      const response = await axios.post(`${BASE_URL}/auth/user`, formData);
+      const response = await axios.post(`/auth/signup`, formData, {});
       if (response.status === 200 || response.status === 201) {
         alert('Signup successful ✅');
         navigate('/');

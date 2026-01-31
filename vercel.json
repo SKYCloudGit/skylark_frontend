@@ -1,8 +1,8 @@
 {
   "rewrites": [
     {
-      "source": "/api/:path*",
-      "destination": "http://14.195.14.194:8081/:path*"
+      "source": "/(auth/.*|data/.*|device/.*|hierarchy/.*|meter-details/.*)",
+      "destination": "http://20.197.44.133:8081/:1"
     }
   ]
 }

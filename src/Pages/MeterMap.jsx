@@ -191,7 +191,7 @@ const MeterMap = () => {
       if (!token) return;
 
       try {
-        const response = await fetch(`/api/data/meter/unMappedMeters`, {
+        const response = await fetch(`/data/meter/mapped`, {
           headers: { Authorization: `Bearer ${token}` },
         });
 

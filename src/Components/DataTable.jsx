@@ -188,7 +188,7 @@ const DataTable = ({ tableData, hierarchy, titles, refreshTableData }) => {
     if (!token || !selectedTitle) return;
 
     try {
-      const response = await fetch(`/api/hierarchy/data/${selectedTitle.id}`, {
+      const response = await fetch(`/hierarchy/data/${selectedTitle.id}`, {
         method: 'DELETE',
         headers: {
           Authorization: `Bearer ${token}`,

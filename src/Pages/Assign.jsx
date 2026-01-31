@@ -3,7 +3,6 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import { Eye, Pencil, Trash, ChevronDown, ChevronRight } from 'lucide-react';
 import './Assign.css';
 import GoBack from '../Components/GoBack';
-import { BASE_URL } from '../Services/api';
 
 // Modals
 import SuccessModal from '../Components/SuccessModal';
@@ -51,10 +50,10 @@ const Assign = () => {
       setLoading(true);
       try {
         const [allResp, assignedResp] = await Promise.all([
-          fetch(`/api/data/module/getAll`, {
+          fetch(`/data/module/getAll`, {
             headers: { Authorization: `Bearer ${token}` },
           }),
-          fetch(`/api/data/moduleAccessRight/userId=${userId}`, {
+          fetch(`/data/moduleAccessRight/userId=${userId}`, {
             headers: { Authorization: `Bearer ${token}` },
           }),
         ]);
@@ -81,7 +80,7 @@ const Assign = () => {
   // Refresh assigned modules from server
   const refreshAssigned = async () => {
     try {
-      const resp = await fetch(`/api/data/moduleAccessRight/userId=${userId}`, {
+      const resp = await fetch(`/data/moduleAccessRight/userId=${userId}`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       if (!resp.ok) throw new Error('Refresh failed');
@@ -125,7 +124,7 @@ const Assign = () => {
   const handleConfirmAssign = async () => {
     if (!selectedModule) return;
     try {
-      const resp = await fetch(`/api/data/moduleAccessRight/add`, {
+      const resp = await fetch(`/data/moduleAccessRight/add`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${token}` },
         body: JSON.stringify({ userId, moduleId: selectedModule.id, ...permissions }),
@@ -151,7 +150,7 @@ const Assign = () => {
 
   const confirmDelete = async () => {
     try {
-      const resp = await fetch(`/api/data/moduleAccessRight/remove`, {
+      const resp = await fetch(`/data/moduleAccessRight/remove`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${token}` },
         body: JSON.stringify({ accessRightId: selectedAccessRightId }),
@@ -170,7 +169,7 @@ const Assign = () => {
 
   const togglePermission = async (accessRightId, field, current) => {
     try {
-      await fetch(`/api/data/moduleAccessRight/update`, {
+      await fetch(`/data/moduleAccessRight/update`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${token}` },
         body: JSON.stringify({ accessRightId, [field]: !current }),
