@@ -224,7 +224,7 @@ const DataTable = ({ tableData, hierarchy, titles, refreshTableData }) => {
     };
 
     try {
-      const response = await fetch(`/api/hierarchy/data/modify/${editingId}`, {
+      const response = await fetch(`/hierarchy/data/modify/${editingId}`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

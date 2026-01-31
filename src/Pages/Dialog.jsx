@@ -122,7 +122,7 @@ export const EditUserDialog = ({
 
     try {
       setSaving(true);
-      const response = await fetch(`/api/auth/user/modify/${selectedUser.id}`, {
+      const response = await fetch(`/auth/user/modify/${selectedUser.id}`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

@@ -43,7 +43,7 @@ const MappedMeter = () => {
     if (!token) return {};
 
     try {
-      const response = await fetch(`/api/hierarchy/data/dataId=${consumerId}`, {
+      const response = await fetch(`/hierarchy/data/dataId=${consumerId}`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       const text = await response.text();

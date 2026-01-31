@@ -46,7 +46,7 @@ const HierarchySelection = ({
     const token = getAuthToken();
     if (!token) return [];
 
-    const url = `/api/hierarchy/data/titleId=${hierarchyTitleId}${
+    const url = `/hierarchy/data/titleId=${hierarchyTitleId}${
       parentId ? `/parentId=${parentId}` : ''
     }`;
 

@@ -61,6 +61,10 @@ const SlideBar = () => {
         });
         const userData = await userRes.json();
         const userId = userData.id;
+        if (!userId) {
+          console.warn('SlideBar: userId is undefined, skipping component access check');
+          return;
+        }
 
         const accessRes = await fetch(`/data/moduleAccessRight/userId=${userId}`, {
           headers: { Authorization: `Bearer ${token}` },

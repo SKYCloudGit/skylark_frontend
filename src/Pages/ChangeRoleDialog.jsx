@@ -50,7 +50,7 @@ export const ChangeRoleDialog = ({ show, onClose, userId, fetchUsers, onSuccess 
 
     try {
       setSaving(true);
-      const response = await fetch(`/api/auth/user/modify/${user.id}`, {
+      const response = await fetch(`/auth/user/modify/${user.id}`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
