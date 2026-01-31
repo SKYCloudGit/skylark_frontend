@@ -59,7 +59,7 @@ const HierarchyTitle = () => {
     if (!token) return;
 
     try {
-      const response = await fetch(`/hierarchy/titles/all`, {
+      const response = await fetch(`/api/hierarchy/titles/all`, {
         headers: {
           'Content-Type': 'application/json',
           Authorization: `Bearer ${token}`,

@@ -18,7 +18,7 @@ const AssignAreaDialog = ({ show, onClose, userId, onAssign }) => {
       if (!token) return;
 
       try {
-        const res = await fetch(`/hierarchy/titles/all`, {
+        const res = await fetch(`/api/hierarchy/titles/all`, {
           headers: { Authorization: `Bearer ${token}` },
         });
         const data = await res.json();

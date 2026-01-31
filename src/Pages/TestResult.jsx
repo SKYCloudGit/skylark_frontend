@@ -47,7 +47,7 @@ const TestResult = () => {
       const token = localStorage.getItem('authToken');
       if (!token) throw new Error('User not authenticated');
 
-      const response = await fetch(`/device/test-result/all`, {
+      const response = await fetch(`/api/device/test-result/all`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       const data = await response.json();

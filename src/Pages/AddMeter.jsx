@@ -32,7 +32,7 @@ export default function Add() {
     if (!token) return;
 
     try {
-      const response = await fetch(`/data/meter/add`, {
+      const response = await fetch(`/api/data/meter/add`, {
         method: 'POST',
         headers: {
           Authorization: `Bearer ${token}`,

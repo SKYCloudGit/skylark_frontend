@@ -66,7 +66,7 @@ const Signup = () => {
     }
 
     try {
-      const response = await axios.post(`/auth/signup`, formData, {});
+      const response = await axios.post(`/api/auth/signup`, formData, {});
       if (response.status === 200 || response.status === 201) {
         alert('Signup successful ✅');
         navigate('/');
