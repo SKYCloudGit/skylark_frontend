@@ -4,5 +4,6 @@
       "source": "/(auth/.*|data/.*|device/.*|hierarchy/.*|meter-details/.*)",
       "destination": "http://20.197.44.133:8081/:1"
     }
-  ]
+  ],
+  "cleanUrls": true
 }
