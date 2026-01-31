@@ -1,8 +1,8 @@
 {
   "rewrites": [
     {
-      "source": "/(auth|data|device|hierarchy|meter-details|consumer|readings|forecast)/:path*",
-      "destination": "http://20.197.44.133:8081/:1/:path*"
+      "source": "/:module(auth|data|device|hierarchy|meter-details|consumer|readings|forecast)/:path*",
+      "destination": "http://20.197.44.133:8081/:module/:path*"
     }
   ],
   "cleanUrls": true
