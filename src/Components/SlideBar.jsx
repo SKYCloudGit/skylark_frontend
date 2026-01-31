@@ -56,13 +56,13 @@ const SlideBar = () => {
       if (!token) return;
 
       try {
-        const userRes = await fetch(`/api/auth/me`, {
+        const userRes = await fetch(`/auth/me`, {
           headers: { Authorization: `Bearer ${token}` },
         });
         const userData = await userRes.json();
         const userId = userData.id;
 
-        const accessRes = await fetch(`/api/data/moduleAccessRight/userId=${userId}`, {
+        const accessRes = await fetch(`/data/moduleAccessRight/userId=${userId}`, {
           headers: { Authorization: `Bearer ${token}` },
         });
         const accessRights = await accessRes.json();

@@ -87,7 +87,7 @@ const MeterDetails = () => {
     const formattedDate = selectedDate.toISOString().split('T')[0];
 
     try {
-      const response = await fetch(`/api/data/get/meterSrNo=${meterId}/date=${formattedDate}`, {
+      const response = await fetch(`/data/get/meterSrNo=${meterId}/date=${formattedDate}`, {
         headers: {
           'Content-Type': 'application/json',
           Authorization: `Bearer ${token}`,
@@ -251,7 +251,7 @@ const MeterDetails = () => {
     if (!token) return;
 
     try {
-      const response = await fetch(`/api/hierarchy/data/dataId=${consumerId}`, {
+      const response = await fetch(`/hierarchy/data/dataId=${consumerId}`, {
         headers: {
           'Content-Type': 'application/json',
           Authorization: `Bearer ${token}`,

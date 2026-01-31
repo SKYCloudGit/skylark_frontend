@@ -43,7 +43,7 @@ const Configure = () => {
       const token = getAuthToken();
       if (!token) throw new Error('No auth token found');
 
-      const userRes = await fetch(`/auth/me`, {
+      const userRes = await fetch(`/hierarchy/titles/all`, {
         headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${token}` },
       });
       if (!userRes.ok) throw new Error('Failed to fetch user info');

@@ -23,7 +23,7 @@ export const ChangeRoleDialog = ({ show, onClose, userId, fetchUsers, onSuccess 
 
       try {
         setLoading(true);
-        const response = await fetch(`/auth/user/id=${userId}`, {
+        const response = await fetch(`/auth/user/role-update`, {
           headers: { Authorization: `Bearer ${token}` },
         });
 
