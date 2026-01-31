@@ -76,7 +76,7 @@ const AddUser = () => {
     };
 
     try {
-      const response = await axios.post(`/api/auth/signup`, formData, {
+      const response = await axios.post(`/auth/signup`, formData, {
         headers: {
           Authorization: `Bearer ${token}`,
           'Content-Type': 'application/json',

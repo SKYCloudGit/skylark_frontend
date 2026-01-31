@@ -110,7 +110,7 @@ const AreaWiseMeters = () => {
     if (!token) return;
 
     try {
-      const response = await fetch(`/api/data/meter/all`, {
+      const response = await fetch(`/data/meter/getAll`, {
         method: 'POST',
         headers: {
           Authorization: `Bearer ${token}`,

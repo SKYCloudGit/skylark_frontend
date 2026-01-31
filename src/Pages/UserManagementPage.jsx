@@ -66,7 +66,7 @@ const UserManagementPage = () => {
 
     try {
       setLoading(true);
-      const response = await fetch(`/api/auth/user/all`, {
+      const response = await fetch(`/auth/user/all`, {
         method: 'GET',
         headers: { Authorization: `Bearer ${token}` },
       });
@@ -162,7 +162,7 @@ const UserManagementPage = () => {
     };
 
     try {
-      await axios.post(`/api/auth/signup`, formData, {
+      await axios.post(`/auth/signup`, formData, {
         headers: { Authorization: `Bearer ${token}`, 'Content-Type': 'application/json' },
       });
 

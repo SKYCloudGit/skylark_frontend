@@ -28,7 +28,7 @@ const Forecasting = ({ meterSrNo }) => {
       const token = localStorage.getItem('authToken');
       if (!token) throw new Error('Auth token missing. Please login.');
 
-      const res = await fetch(`/api/data/forecast/all`, {
+      const res = await fetch(`/data/forecast/all`, {
         headers: { Authorization: `Bearer ${token}` },
       });
 

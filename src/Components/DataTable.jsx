@@ -77,7 +77,7 @@ const DataTable = ({ tableData, hierarchy, titles, refreshTableData }) => {
     }
 
     try {
-      const response = await fetch(`/api/hierarchy/titles/all`, {
+      const response = await fetch(`/data/meter/mapped`, {
         headers: {
           'Content-Type': 'application/json',
           Authorization: `Bearer ${token}`,

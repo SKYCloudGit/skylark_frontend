@@ -75,7 +75,7 @@ const BcsData = () => {
     if (!token) return;
 
     try {
-      const res = await fetch(`/api/device/manufacturing/add`, {
+      const res = await fetch(`/device/manufacturing/add`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
