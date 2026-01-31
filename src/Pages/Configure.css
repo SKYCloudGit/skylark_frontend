@@ -1,0 +1,89 @@
+/* Configure.css */
+
+/* Container styling */
+.configure-container {
+  display: flex;
+  justify-content: center;
+  padding: 30px;
+  background-color: #f9f9fc;
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+
+/* Main box */
+.configure {
+  background: white;
+  width: 750px;
+  border-radius: 12px;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.06);
+  padding: 25px 30px;
+  box-sizing: border-box;
+}
+
+/* Heading */
+.screen-headings {
+  font-size: 20px;
+  font-weight: 600;
+  color: #333333;
+  margin-bottom: 5px;
+}
+
+/* Subheading text */
+.delete-text {
+  font-size: 14px;
+  color: #666666;
+  margin-bottom: 15px;
+}
+
+/* Divider */
+.MuiDivider-root {
+  margin: 15px 0;
+}
+
+/* Form section */
+.main {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+/* Row layout for each label + input */
+.form-row {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+/* Labels */
+.form-label {
+  font-size: 14px;
+  font-weight: 500;
+  color: #444;
+  min-width: 200px;
+}
+
+/* Buttons container */
+.buttons-container {
+  display: flex;
+  justify-content: flex-start;
+  gap: 30px;
+  margin-top: 20px;
+  margin-left: 240px;
+  margin-bottom: 20px;
+}
+
+/* Save button hover */
+.MuiButton-containedPrimary:hover {
+  background-color: #6b2ed3 !important;
+}
+
+/* Cancel button */
+.MuiButton-containedSecondary {
+  background-color: gray !important;
+  color: black !important;
+}
+
+/* Circular progress alignment */
+.MuiCircularProgress-root {
+  color: white !important;
+}

@@ -1,0 +1,62 @@
+/* .sidebar-item {
+  padding: 10px;
+  border-radius: 12px;
+  color: #ad1e1e;
+  font-weight: 500;
+  transition: background 0.2s;
+} */
+
+/* .sidebar-item:hover,
+.sidebar-subitem:hover {
+  background-color: #f3e8ff;
+  color: #000;
+  border-radius: 12px;
+} */
+
+/* .sidebar-subitem {
+  font-size: 0.95rem;
+  color: #f3e8ff;
+  padding: 6px 10px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.sidebar-icon {
+  width: 24px;
+  height: 24px;
+  color: #7C3AED;
+} */
+
+
+.collapse-button {
+  display: flex;
+  justify-content: flex-end;
+  padding: 10px;
+  position: relative; /* Ensure the button stays within the sidebar */
+}
+.collapse-button button {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1px solid #ddd;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+}
+
+.collapse-button button:hover {
+  background-color: #f3e8ff;
+  border-color: #c084fc;
+}
+
+
+.sidebar{
+  background-color: white;
+  position: fixed;
+  overflow-x: hidden;
+}

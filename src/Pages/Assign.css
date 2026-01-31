@@ -1,0 +1,251 @@
+/* Main Page Layout */
+.assign-modules-page {
+  padding: 20px;
+  background: #f5f5ff;
+}
+
+.page-title {
+  color: #6a0dad;
+  margin-bottom: 20px;
+}
+
+.modules-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+/* Card Sections */
+
+.available-section {
+  flex: 1 1 300px;
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  height: fit-content;
+}
+
+.assigned-section {
+  flex: 1 1 300px;
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.module-card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 15px;
+  margin-bottom: 15px;
+  background-color: #fafaff;
+}
+
+.module-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #4b0082;
+  margin-bottom: 8px;
+}
+
+.module-desc {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 10px;
+}
+
+/* Assign/Remove Buttons */
+.assign-btn,
+.remove-btn {
+  background-color: #6a0dad;
+  color: white;
+  border: none;
+  padding: 6px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background 0.2s;
+}
+
+.assign-btn:hover,
+.remove-btn:hover {
+  background-color: #580b9c;
+}
+
+/* Permissions Toggle Section */
+.permissions-toggle {
+  border-top: 1px solid #ddd;
+  margin-top: 12px;
+  padding-top: 12px;
+}
+
+.permissions-title {
+  font-weight: bold;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  color: #333;
+}
+
+.permissions-row {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.permission-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: #f9f9f9;
+  padding: 6px 10px;
+  border-radius: 8px;
+  border: 1px solid #e0e0e0;
+  transition: background 0.2s, box-shadow 0.2s;
+  cursor: pointer;
+}
+
+.permission-item:hover {
+  background: #f0f0f0;
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.1);
+}
+
+.perm-icon {
+  font-size: 16px;
+  color: #6a0dad;
+}
+
+.perm-label {
+  font-size: 14px;
+  color: #555;
+}
+
+/* Modern Checkbox Styling */
+.permission-item input[type='checkbox'] {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 18px;
+  height: 18px;
+  border: 2px solid #6a0dad;
+  border-radius: 4px;
+  cursor: pointer;
+  position: relative;
+  background: white;
+  transition: background 0.2s, border-color 0.2s;
+}
+
+.permission-item input[type='checkbox']:checked {
+  background-color: #6a0dad;
+  border-color: #6a0dad;
+}
+
+.permission-item input[type='checkbox']:checked::after {
+  content: '';
+  position: absolute;
+  top: 2px;
+  left: 5px;
+  width: 4px;
+  height: 8px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+/* No modules placeholder */
+.no-modules {
+  color: #777;
+  font-style: italic;
+}
+
+/* Modal Overlay 
+ .modal-overlay {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw; height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex; justify-content: center; align-items: center;
+  z-index: 999;
+}
+
+/* Modal Content 
+.modal-content {
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 400px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+  text-align: center;
+  animation: fadeIn 0.3s ease;
+}
+
+.modal-content h3 {
+  margin-bottom: 10px;
+  color: #6a0dad;
+  background-color: #eeeaff;
+  padding: 10px;
+  border-radius: 1px;
+}
+
+.modal-content p {
+  margin: 5px 0;
+  color: #333;
+  font-size: 14px;
+}
+
+.modal-permissions {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin: 15px 0;
+  align-items: center;
+}
+
+.permission-row {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+}
+
+.permission-row label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: #f5f5ff;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  cursor: pointer;
+  transition: background 0.2s;
+  min-width: 120px; /* Keep all labels the same width 
+  text-align: center;
+}
+
+
+.modal-permissions label:hover {
+  background: #eeeaff;
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 15px;
+}
+
+/* Animation 
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+/* Responsive Fixes 
+@media (max-width: 768px) {
+  .modules-grid {
+    flex-direction: column;
+  }
+} */

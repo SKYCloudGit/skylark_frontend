@@ -1,0 +1,28 @@
+.action-dropdown-menu {
+  background: #7c3aed;
+  border: 1px solid #ddd;
+  border-radius: 0.5rem;
+  min-width: 180px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.action-dropdown-item {
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.action-dropdown-item:hover {
+  background-color: #f8f9fa;
+}
+
+/* Dropdown opens below (default) */
+.open-down {
+  top: 100%;
+  margin-top: 0.5rem;
+}
+
+/* Dropdown opens above */
+.open-up {
+  bottom: 100%;
+  margin-bottom: 0.5rem;
+}

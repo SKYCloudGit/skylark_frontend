@@ -1,0 +1,44 @@
+/* AddUser.css */
+
+
+.form-control,
+.form-select {
+
+  font-size: 0.9rem;
+  padding: 0.4rem 0.6rem;
+  border-radius: 8px;
+  border: 1px solid #ced4da !important;
+  transition: border-color 0.3s ease;
+}
+
+.form-control:focus,
+.form-select:focus {
+  border-color: #6f42c1 !important; /* purple highlight */
+  box-shadow: 0 0 0 0.2rem rgba(111, 66, 193, 0.25)!important;
+}
+
+.btn-primary {
+  background-color: #6f42c1 !important;
+  border-color: #6f42c1 !important;
+  border-radius: 8px;
+}
+
+.btn-primary:hover {
+  background-color: #5a32a3 !important;
+  border-color: #5a32a3 !important;
+}
+
+.shadow {
+  box-shadow: 0 0.75rem 1.5rem rgba(0, 0, 0, 0.1) !important;
+}
+
+.text-brand {
+  color: #6f42c1;
+  font-weight: 600;
+}
+
+input::placeholder {
+  font-size: 0.85rem;
+  color: #aaa;
+}
+

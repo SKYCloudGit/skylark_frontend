@@ -1,0 +1,17 @@
+.bg-primary {
+    background-color: #7C3AED !important;
+  }
+  .text-primary {
+    color: #7C3AED !important;
+  }
+  .btn-primary {
+    background-color: #7C3AED;
+    border-color: #7C3AED;
+  }
+  
+
+  .custom-header th {
+    background-color: #7C3AED !important;
+    color: white;
+  }
+  

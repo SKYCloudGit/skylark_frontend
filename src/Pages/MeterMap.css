@@ -1,0 +1,11 @@
+/* MeterMap.css */
+.btn-custom-border {
+  border: 2px solid #7C3AED;
+  color: #7C3AED;
+  transition: 0.3s ease;
+}
+
+.btn-custom-border:hover {
+  background-color: #7C3AED;
+  color: white;
+}

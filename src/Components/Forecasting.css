@@ -1,0 +1,145 @@
+/* Container */
+.analytics-container {
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: #f9f9fb;
+  padding: 20px;
+  min-height: 100vh;
+}
+
+/* Page Title */
+.analytics-title {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+/* Card layout */
+.analytics-card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08);
+  padding: 20px;
+  margin-bottom: 20px;
+  transition: transform 0.2s ease;
+}
+
+.analytics-card:hover {
+  transform: translateY(-2px);
+}
+
+/* Card titles */
+.analytics-card-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #7b235b; /* brand color */
+  margin-bottom: 15px;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 8px;
+}
+
+/* Dropdowns and filters */
+.analytics-filter {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.analytics-filter select {
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  outline: none;
+  background: #fff;
+  transition: border-color 0.2s;
+}
+
+.analytics-filter select:focus {
+  border-color: #7b235b;
+}
+
+/* Stats cards (Average, Total, High, Low) */
+.stats-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.stats-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 15px;
+  text-align: center;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+}
+
+.stats-value {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #7b235b;
+}
+
+.stats-label {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+/* Chart area */
+.chart-container {
+  width: 100%;
+  height: 350px;
+}
+
+/* Table */
+.analytics-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+.analytics-table th,
+.analytics-table td {
+  padding: 12px 15px;
+  border: 1px solid #eee;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+.analytics-table th {
+  background: #f1f1f7;
+  color: #333;
+  font-weight: 600;
+}
+
+.analytics-table tr:nth-child(even) {
+  background: #fafafa;
+}
+
+/* Pagination */
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 15px;
+  gap: 8px;
+}
+
+.pagination button {
+  background: #fff;
+  border: 1px solid #ccc;
+  padding: 6px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+
+.pagination button:hover {
+  background: #7b235b;
+  color: #fff;
+}
+
+.pagination button.active {
+  background: #7b235b;
+  color: #fff;
+  border-color: #7b235b;
+}
