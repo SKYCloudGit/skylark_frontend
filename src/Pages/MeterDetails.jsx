@@ -148,7 +148,7 @@ const MeterDetails = () => {
     if (!token) return;
 
     try {
-      const response = await fetch(`/api/data/getAll/meterSrNo=${meterId}`, {
+      const response = await fetch(`/data/getAll/meterSrNo=${meterId}`, {
         headers: {
           'Content-Type': 'application/json',
           Authorization: `Bearer ${token}`,
@@ -299,7 +299,7 @@ const MeterDetails = () => {
     }
 
     try {
-      const response = await fetch(`/api/data/getAll/meterSrNo=${meterId}`, {
+      const response = await fetch(`/data/getAll/meterSrNo=${meterId}`, {
         headers: {
           Authorization: `Bearer ${token}`, // Include token if required
           'Content-Type': 'application/json',
